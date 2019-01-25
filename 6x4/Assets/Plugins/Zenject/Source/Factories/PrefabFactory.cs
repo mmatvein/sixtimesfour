@@ -13,7 +13,7 @@ namespace Zenject
         //where T : Component
     {
         [Inject]
-        readonly DiContainer _container;
+        readonly DiContainer _container = default;
 
         public DiContainer Container
         {
@@ -38,8 +38,8 @@ namespace Zenject
         //where T : Component
     {
         [Inject]
-        readonly DiContainer _container;
-
+        readonly DiContainer _container = default;
+        
         public DiContainer Container
         {
             get { return _container; }
@@ -60,7 +60,7 @@ namespace Zenject
         //where T : Component
     {
         [Inject]
-        readonly DiContainer _container;
+        readonly DiContainer _container = default;
 
         public DiContainer Container
         {
@@ -82,7 +82,7 @@ namespace Zenject
         //where T : Component
     {
         [Inject]
-        readonly DiContainer _container;
+        readonly DiContainer _container = default;
 
         public DiContainer Container
         {
@@ -104,7 +104,7 @@ namespace Zenject
         //where T : Component
     {
         [Inject]
-        readonly DiContainer _container;
+        readonly DiContainer _container = default;
 
         public DiContainer Container
         {

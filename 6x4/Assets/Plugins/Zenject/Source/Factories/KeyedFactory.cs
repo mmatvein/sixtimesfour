@@ -9,15 +9,15 @@ namespace Zenject
     public abstract class KeyedFactoryBase<TBase, TKey> : IValidatable
     {
         [Inject]
-        readonly DiContainer _container;
+        readonly DiContainer _container = default;
 
         [InjectOptional]
-        readonly List<ValuePair<TKey, Type>> _typePairs;
+        readonly List<ValuePair<TKey, Type>> _typePairs = default;
 
         Dictionary<TKey, Type> _typeMap;
 
         [InjectOptional]
-        readonly Type _fallbackType;
+        readonly Type _fallbackType = default;
 
         protected DiContainer Container
         {

@@ -8,13 +8,13 @@ namespace Zenject
     public abstract class MonoKernel : MonoBehaviour
     {
         [InjectLocal]
-        TickableManager _tickableManager;
+        TickableManager _tickableManager = default;
 
         [InjectLocal]
-        InitializableManager _initializableManager;
+        InitializableManager _initializableManager = default;
 
         [InjectLocal]
-        DisposableManager _disposablesManager;
+        DisposableManager _disposablesManager = default;
 
         bool _hasInitialized;
         bool _isDestroyed;

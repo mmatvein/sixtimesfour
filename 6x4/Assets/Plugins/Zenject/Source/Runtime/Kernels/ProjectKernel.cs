@@ -10,10 +10,10 @@ namespace Zenject
     public class ProjectKernel : MonoKernel
     {
         [Inject]
-        ZenjectSettings _settings;
+        ZenjectSettings _settings = default;
 
         [Inject]
-        SceneContextRegistry _contextRegistry;
+        SceneContextRegistry _contextRegistry = default;
 
         // One issue with relying on MonoKernel.OnDestroy to call IDisposable.Dispose
         // is that the order that OnDestroy is called in is difficult to predict
