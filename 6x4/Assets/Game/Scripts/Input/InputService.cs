@@ -1,8 +1,9 @@
-using UnityEngine;
-
 namespace Game.Scripts.Input
 {
-    public delegate void WorldCoordinatesCallback(Vector3 worldCoordinates);
+	using JetBrains.Annotations;
+	using UnityEngine;
+
+	public delegate void WorldCoordinatesCallback(Vector3 worldCoordinates);
     
     public interface IInputService
     {
@@ -11,13 +12,14 @@ namespace Game.Scripts.Input
         void SignalPress(Vector3 worldCoordinates);
     }
     
-    public class InputService : IInputService
+    [UsedImplicitly]
+	public class InputService : IInputService
     {
         public event WorldCoordinatesCallback OnPressHappened;
         public void SignalPress(Vector3 worldCoordinates)
         {
             Debug.Log("Press happened");
-            OnPressHappened?.Invoke(worldCoordinates);
+			this.OnPressHappened?.Invoke(worldCoordinates);
         }
     }
 }

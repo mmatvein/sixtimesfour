@@ -1,9 +1,9 @@
-﻿using System;
-using JetBrains.Annotations;
-
-namespace Game.Scripts.Core
+﻿namespace Game.Scripts.Core
 {
-    public interface ISceneLoader
+	using System;
+	using JetBrains.Annotations;
+
+	public interface ISceneLoader
     {
         void LoadNextGameScene();
     }

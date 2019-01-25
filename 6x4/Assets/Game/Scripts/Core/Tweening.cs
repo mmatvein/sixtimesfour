@@ -1,9 +1,9 @@
-using System.Collections;
-using UnityEngine;
-
 namespace Game.Scripts.Core
 {
-    public static class Tweening
+	using System.Collections;
+	using UnityEngine;
+
+	public static class Tweening
     {
         public static IEnumerator TweenPosition(Transform transformToTween, Vector3 from, Vector3 to,
             AnimationCurve curve, float duration)

@@ -1,19 +1,19 @@
-using SixTimesFour.Core;
-using UnityEngine;
-using Zenject;
-
 namespace Game.Scripts.Input
 {
-    public class MouseClickListener : MonoBehaviour
-    {
-        [Inject(Id = Cameras.Main)] private Camera mainWorldCamera = default;
-        [Inject] private IInputService inputService = default;
+	using SixTimesFour.Core;
+	using UnityEngine;
+	using Zenject;
 
-        private void Update()
+	public class MouseClickListener : MonoBehaviour
+    {
+        [Inject(Id = Cameras.Main)] Camera mainWorldCamera = default;
+        [Inject] IInputService inputService = default;
+
+		void Update()
         {
-            if (UnityEngine.Input.GetMouseButtonUp(0))
+            if (Input.GetMouseButtonUp(0))
             {
-                inputService.SignalPress(mainWorldCamera.ScreenToWorldPoint(UnityEngine.Input.mousePosition));
+				this.inputService.SignalPress(this.mainWorldCamera.ScreenToWorldPoint(Input.mousePosition));
             }
         }
     }

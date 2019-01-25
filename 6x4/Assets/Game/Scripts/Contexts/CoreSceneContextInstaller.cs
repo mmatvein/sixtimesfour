@@ -1,21 +1,21 @@
-using Game.Scripts.Gameplay;
-using SixTimesFour.Core;
-using UnityEngine;
-using Zenject;
-
 namespace Game.Scripts.Contexts
 {
-    public class CoreSceneContextInstaller : MonoInstaller
+	using Gameplay;
+	using SixTimesFour.Core;
+	using UnityEngine;
+	using Zenject;
+
+	public class CoreSceneContextInstaller : MonoInstaller
     {
-        [SerializeField] private Camera mainCamera = default;
-        [SerializeField] private Camera uiCamera = default;
-        [SerializeField] private PlayerMover playerMover = default;
+        [SerializeField] Camera mainCamera = default;
+        [SerializeField] Camera uiCamera = default;
+        [SerializeField] PlayerMover playerMover = default;
         
         public override void InstallBindings()
         {
-            Container.BindInstance(mainCamera).WithId(Cameras.Main);
-            Container.BindInstance(uiCamera).WithId(Cameras.UI);
-            Container.BindInstances(playerMover)    ;
+			this.Container.BindInstance(this.mainCamera).WithId(Cameras.Main);
+			this.Container.BindInstance(this.uiCamera).WithId(Cameras.Ui);
+			this.Container.BindInstances(this.playerMover);
         }
     }
 }

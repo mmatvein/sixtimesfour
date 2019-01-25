@@ -4,6 +4,6 @@ namespace SixTimesFour.Core
     {
         Undefined,
         Main,
-        UI
+        Ui
     }
 }
