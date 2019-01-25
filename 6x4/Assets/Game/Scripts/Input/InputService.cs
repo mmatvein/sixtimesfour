@@ -16,7 +16,8 @@ namespace Game.Scripts.Input
         public event WorldCoordinatesCallback OnPressHappened;
         public void SignalPress(Vector3 worldCoordinates)
         {
-            this.OnPressHappened?.Invoke(worldCoordinates);
+            Debug.Log("Press happened");
+            OnPressHappened?.Invoke(worldCoordinates);
         }
     }
 }
