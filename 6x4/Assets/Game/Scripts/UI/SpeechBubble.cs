@@ -25,7 +25,8 @@ namespace Game.Scripts.UI
 			foreach (var buttonText in buttonTexts)
 			{
 				var button = Instantiate(this.buttonPrefab, this.transform);
-				button.Setup(buttonText, () => chosenButtonIndex = buttonIndex);
+				var index = buttonIndex;
+				button.Setup(buttonText, () => chosenButtonIndex = index);
 				this.spawnedButtons.Add(button);
 				buttonIndex++;
 			}
