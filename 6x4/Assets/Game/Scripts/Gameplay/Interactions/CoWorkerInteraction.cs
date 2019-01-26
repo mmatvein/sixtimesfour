@@ -4,9 +4,9 @@ namespace Game.Scripts.Gameplay
 	using UnityEngine;
 	using Zenject;
 
-	public class FriendInteraction : Interaction
+	public class CoWorkerInteraction : Interaction
 	{
-		[SerializeField] Animator friendAnimator = default;
+		[SerializeField] Animator CoworkerAnimator= default;
 		[Inject] PlayerMover playerMover = default;
 		[Inject] IPlayerChoiceService playerChoiceService = default;
 
@@ -17,7 +17,7 @@ namespace Game.Scripts.Gameplay
 
 		public override IEnumerator RunInteraction()
 		{
-			yield return this.playerMover.MoveToPosition(this.transform.position-Vector3.left);
+			yield return this.playerMover.MoveToPosition(this.transform.position-Vector3.right);
 
 
 			this.talkTofriend();
@@ -25,7 +25,7 @@ namespace Game.Scripts.Gameplay
 
 		void talkTofriend()
 		{
-            friendAnimator.SetBool("Talking", true);
+            CoworkerAnimator.SetBool("Talking", true);
 			
 		}
 	}
