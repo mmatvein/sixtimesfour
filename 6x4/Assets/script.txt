@@ -44,6 +44,11 @@ Should I make my bed?
 	Yes. Don't say nobody visits here anyway. You do. b0
 	No. I don't care. b1
 
+I haven't opened this cabinet in ages...
+	Open upper cabinet (d1) uc0
+		I made this drawing for him. He said 'I like it, but you really need to look after a real career'. What a shitbag.
+	Open lower cabinet (fr1) lc0
+		This card was made by my niece. She's 7 now. I hope everything is good for her. My sister has... her problems...
 
 2. STREET
 [friend]
@@ -56,14 +61,10 @@ Oh I'm great. Just great. Sorry, gotta run. See you!
 
 [beggar]
 Could you spare a rupee?
-	/ignore b0
-	No. I don't support human trafficking. (d0 l1) b1
-	*give rupee* b2
+	*sniff* I'm so sorry (l2 cw0) bg0
+	No. I don't support human trafficking. (d0 l1) bg1
+	*give rupee* bg2
 
-[man on street]
-*whistles*
-	/ignore (l2 fr0) m0
-	/flip off
 
 3. OFFICE
 
@@ -72,7 +73,14 @@ Could you spare a rupee?
 	use social media d1
 
 d0: open mini game where you have to click blank spots to write numbers on the paper to the excel.
-d1: *you find out that your ex has gotten married.
+d1: *you find out that your ex has gotten married.'
+
+[co-worker]
+Hi, seems a bit tense around here today *laughs nervously*
+	it's okay. cw0
+		ah well, hope so. Surely do.
+	be supportive (b2) cw1
+		So, I need to tell you something about the layoffs. We've been in contact with the union lawyer who tells us that the discharges are illegal. They're essentially making you resign. It's highly illegal and it's been hidden in fine print and legalese. cw2
 
 4. LUNCH
 
@@ -87,9 +95,14 @@ d1: *you find out that your ex has gotten married.
 [boss]
 We have been reassessing our resources, and as we all know, we are living in tough times, so we have to lay you off. I'm afraid the severance package is out of the question because we have been told that you are not a very motivated worker.
 	I understand. I will take this as a lesson. (b1) bos1 
+	Tell him about the class action suit and demand a generous severance package (cw1) bos2
 
 6. BACK HOME
+
 [phone rings]
 It's mom.
-	Answer. Cry. (m0) +catharsis
-	Ignore. You need to go on a job hunt. (bos1) m0 +bootlicker
+	Answer, talk neutrally.
+	Answer. Cry. (fr0 bg0) +catharsis mom0
+	Ignore. You need to go on a job hunt. (bos1) m0 +bootlicker m0m1
+	Answer. Talk about niece. (lc0) +family mom2
+	Answer. Talk about coming home to go back to art (mom2 mom0 bos2) +home & end game
