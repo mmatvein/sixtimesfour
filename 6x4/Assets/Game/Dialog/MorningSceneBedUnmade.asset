@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preconditions:
   - choice: 0
-    choiceValue: 0
-    assumedChoiceValue: 0
+    choiceValue: 1
+    assumedChoiceValue: 1
   speech: I wonder if I should make my bed..
   buttonTexts:
   - Do it.

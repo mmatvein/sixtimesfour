@@ -9,44 +9,11 @@ namespace Game.Scripts.Contexts
 	public class MorningSceneInstaller : MonoInstaller
 	{
 		[SerializeField] BedInteraction bedInteraction = default;
-		[SerializeField] List<DialogItem> dialogItems = default;
-
-		[Inject] IPlayerChoiceService playerChoiceService = default;
+		
 		
 		public override void InstallBindings()
 		{
 			this.Container.BindInstances(this.bedInteraction);
-
-			this.SetupDialog();
-		}
-
-		void SetupDialog()
-		{
-			var validDialogItems = this.dialogItems.Where(
-				item =>
-				{
-					foreach (var precondition in item.preconditions)
-					{
-						if (this.playerChoiceService.GetChoice(precondition.choice, precondition.assumedChoiceValue) !=
-							precondition.choiceValue)
-						{
-							return false;
-						}
-					}
-
-					return true;
-				});
-
-			var firstValidItem = validDialogItems.FirstOrDefault();
-
-			if (firstValidItem != null)
-			{
-				this.Container.BindInstance(firstValidItem);
-			}
-			else
-			{
-				Debug.LogWarning("No dialog item is valid based on preconditions!");
-			}
 		}
 	}
 }
