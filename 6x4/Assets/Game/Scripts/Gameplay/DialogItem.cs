@@ -9,7 +9,6 @@ namespace Game.Scripts.Gameplay
 	{
 		public List<Precondition> preconditions;
 		public string speech;
-		public List<string> buttonTexts;
 		public List<Button> buttons;
 
 		[Serializable]

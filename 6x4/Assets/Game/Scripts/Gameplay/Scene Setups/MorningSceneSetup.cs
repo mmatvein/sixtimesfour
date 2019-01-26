@@ -1,5 +1,6 @@
 namespace Game.Scripts.SceneSetups
 {
+	using System.Linq;
 	using Gameplay;
 	using UI;
 	using UnityEngine;
@@ -20,7 +21,9 @@ namespace Game.Scripts.SceneSetups
 
 		async void RunDialog()
 		{
-			var result = await this.speechBubble.ShowAsync(this.dialogItem.speech, this.dialogItem.buttonTexts.ToArray());
+			var result = await this.speechBubble.ShowAsync(
+				this.dialogItem.speech,
+				this.dialogItem.buttons.Select(button => button.text).ToArray());
 
 			var chosenButton = this.dialogItem.buttons[result];
 			this.playerChoiceService.RecordChoice(chosenButton.choice, chosenButton.choiceValue);
