@@ -546,6 +546,8 @@ GameObject:
   - component: {fileID: 1259174186}
   - component: {fileID: 1259174185}
   - component: {fileID: 1259174187}
+  - component: {fileID: 1259174189}
+  - component: {fileID: 1259174188}
   m_Layer: 0
   m_Name: SceneContext
   m_TagString: Untagged
@@ -568,6 +570,7 @@ MonoBehaviour:
   _scriptableObjectInstallers: []
   _monoInstallers:
   - {fileID: 1259174187}
+  - {fileID: 1259174189}
   _installerPrefabs: []
   _autoRun: 1
   _parentNewObjectsUnderSceneContext: 0
@@ -604,6 +607,32 @@ MonoBehaviour:
   uiCamera: {fileID: 1768884203}
   playerMover: {fileID: 2071989401}
   speechBubble: {fileID: 289537587}
+--- !u!114 &1259174188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259174184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16953fb9cd2e041ef8126d662e024500, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1259174189
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259174184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a423ae67855249b89d9443fb62b8dedc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogItems:
+  - {fileID: 11400000, guid: 883b140973b1e39499fc24649c5d9ca7, type: 2}
 --- !u!1 &1547769955
 GameObject:
   m_ObjectHideFlags: 0
@@ -1187,26 +1216,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 958463946881717595, guid: 1d36f680bb57e472b863dda520897f33,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1236,6 +1245,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 276.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 958463946875282896, guid: 1d36f680bb57e472b863dda520897f33,
         type: 3}
