@@ -19,7 +19,7 @@ MonoBehaviour:
   - Ignore. You need to go on a job hunt.
   buttons:
   - text: Answer. Cry.
-    choice: 0
+    choice: 8
     choiceValue: 0
   - text: Ignore. You need to go on a job hunt.
     choice: 0

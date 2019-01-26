@@ -13,8 +13,17 @@ MonoBehaviour:
   m_Name: LunchLine
   m_EditorClassIdentifier: 
   preconditions: []
-  speech: Potatoes and gravy
+  speech: Lunch...
   buttonTexts:
   - Salad
   - Pizza
-  buttons: []
+  buttons:
+  - text: Potatoes and Gravy
+    choice: 6
+    choiceValue: 0
+  - text: Salad
+    choice: 6
+    choiceValue: 1
+  - text: Pizza
+    choice: 6
+    choiceValue: 2

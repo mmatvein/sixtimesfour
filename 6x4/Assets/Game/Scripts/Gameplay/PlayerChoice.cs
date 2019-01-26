@@ -8,7 +8,7 @@ namespace Game.Scripts.Gameplay
         Beggar,
         Friend,
         Computer,
-        Cowoker,
+        Coworker,
         Lunch,
         Boss,
         Mom
