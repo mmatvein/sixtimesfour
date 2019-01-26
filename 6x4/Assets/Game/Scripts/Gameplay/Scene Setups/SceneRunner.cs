@@ -19,6 +19,7 @@ namespace Game.Scripts.Gameplay.SceneSetups
 		[Inject] DialogItem dialogItem = default;
 		[Inject] IPlayerChoiceService playerChoiceService = default;
 		[Inject] CoroutineRunner coroutineRunner = default;
+		[Inject] ISceneDirector sceneDirector = default;
 		
 		void Start()
 		{
@@ -39,6 +40,8 @@ namespace Game.Scripts.Gameplay.SceneSetups
 				Debug.Log("Result: " + result);
 
 				await this.coroutineRunner.RunCoroutineAsTask(this.HandleResult(result));
+				
+				this.sceneDirector.CurrentSceneDone();
 			}
 			catch (Exception e)
 			{

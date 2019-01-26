@@ -14,4 +14,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game/Scenes/MorningScene.unity
     guid: 722e2dab0ca334638becbe6549fa83d0
+  - enabled: 1
+    path: Assets/Game/Scenes/StreetScene.unity
+    guid: a4f418d844110ff47b3348b9483b76c9
+  - enabled: 1
+    path: Assets/Game/Scenes/WorkScene.unity
+    guid: 688e111e6da806f47ab4d7f44019dc95
+  - enabled: 1
+    path: Assets/Game/Scenes/LunchScene.unity
+    guid: f068736588d25754fb7da492be1428f5
+  - enabled: 1
+    path: Assets/Game/Scenes/BossScene.unity
+    guid: ebdf5b128f434cf4a8a064ab91c8a978
   m_configObjects: {}
