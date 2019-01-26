@@ -5,7 +5,7 @@ namespace Game.Scripts.SceneSetups
 	using UnityEngine;
 	using Zenject;
 
-	public class MorningSceneSetup : UnityEngine.MonoBehaviour
+	public class MorningSceneSetup : MonoBehaviour
 	{
 		[Inject] SpeechBubble speechBubble = default;
 		[Inject] DialogItem dialogItem = default;

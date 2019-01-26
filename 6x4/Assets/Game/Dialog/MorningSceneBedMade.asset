@@ -12,6 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8112a686842a64ac39a124413030c27d, type: 3}
   m_Name: MorningSceneBedMade
   m_EditorClassIdentifier: 
+  preconditions:
+  - choice: 0
+    choiceValue: 1
+    assumedChoiceValue: 0
   speech: I've already made my bed
   buttonTexts:
   - Hooray

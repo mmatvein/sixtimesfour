@@ -1,5 +1,7 @@
 namespace Game.Scripts.Contexts
 {
+	using System.Collections.Generic;
+	using System.Linq;
 	using Gameplay;
 	using UnityEngine;
 	using Zenject;
@@ -7,8 +9,7 @@ namespace Game.Scripts.Contexts
 	public class MorningSceneInstaller : MonoInstaller
 	{
 		[SerializeField] BedInteraction bedInteraction = default;
-		[SerializeField] DialogItem bedUnmadeDialog = default;
-		[SerializeField] DialogItem bedMadeDialog = default;
+		[SerializeField] List<DialogItem> dialogItems = default;
 
 		[Inject] IPlayerChoiceService playerChoiceService = default;
 		
@@ -21,11 +22,31 @@ namespace Game.Scripts.Contexts
 
 		void SetupDialog()
 		{
-			var bedMadeChoice = this.playerChoiceService.GetChoice(PlayerChoice.MadeBed, PlayerChoiceValues.BED_UNMADE);
-			this.Container.BindInstance(
-				bedMadeChoice == PlayerChoiceValues.BED_UNMADE ? 
-					this.bedUnmadeDialog : 
-					this.bedMadeDialog);
+			var validDialogItems = this.dialogItems.Where(
+				item =>
+				{
+					foreach (var precondition in item.preconditions)
+					{
+						if (this.playerChoiceService.GetChoice(precondition.choice, precondition.assumedChoiceValue) !=
+							precondition.choiceValue)
+						{
+							return false;
+						}
+					}
+
+					return true;
+				});
+
+			var firstValidItem = validDialogItems.FirstOrDefault();
+
+			if (firstValidItem != null)
+			{
+				this.Container.BindInstance(firstValidItem);
+			}
+			else
+			{
+				Debug.LogWarning("No dialog item is valid based on preconditions!");
+			}
 		}
 	}
 }
