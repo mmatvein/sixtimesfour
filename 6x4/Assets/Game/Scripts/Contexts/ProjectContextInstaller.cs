@@ -12,6 +12,8 @@ namespace Game.Scripts.Contexts
 			this.Container.Bind<IInputService>().To<InputService>().AsSingle();
 			this.Container.Bind<ISceneLoader>().To<SceneLoader>().AsSingle();
 			this.Container.Bind<IPlayerChoiceService>().To<PlayerChoiceService>().AsSingle();
+			this.Container.Bind<ISceneDirector>().To<SceneDirector>().AsSingle();
+			this.Container.BindInstance(this.GetComponent<CoroutineRunner>());
 		}
     }
 }

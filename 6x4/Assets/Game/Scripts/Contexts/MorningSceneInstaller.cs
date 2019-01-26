@@ -21,15 +21,11 @@ namespace Game.Scripts.Contexts
 
 		void SetupDialog()
 		{
-			var bedMadeChoice = this.playerChoiceService.GetChoice(PlayerChoice.MadeBed, PlayerChoiceValues.BED_UNMADE); 
-			if (bedMadeChoice == PlayerChoiceValues.BED_UNMADE)
-			{
-				this.Container.BindInstance(this.bedUnmadeDialog);
-			}
-			else
-			{
-				this.Container.BindInstance(this.bedMadeDialog);
-			}
+			var bedMadeChoice = this.playerChoiceService.GetChoice(PlayerChoice.MadeBed, PlayerChoiceValues.BED_UNMADE);
+			this.Container.BindInstance(
+				bedMadeChoice == PlayerChoiceValues.BED_UNMADE ? 
+					this.bedUnmadeDialog : 
+					this.bedMadeDialog);
 		}
 	}
 }
