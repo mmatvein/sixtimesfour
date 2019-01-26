@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8112a686842a64ac39a124413030c27d, type: 3}
   m_Name: OfficeDesk
   m_EditorClassIdentifier: 
-  speech: 
+  preconditions: []
+  speech: OfficeDesk
   buttonTexts:
   - 
   - 
+  buttons:
+  - text: Work
+    choice: 4
+    choiceValue: 0
+  - text: Social Media
+    choice: 4
+    choiceValue: 1

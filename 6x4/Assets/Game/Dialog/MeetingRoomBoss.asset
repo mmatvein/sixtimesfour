@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8112a686842a64ac39a124413030c27d, type: 3}
   m_Name: MeetingRoomBoss
   m_EditorClassIdentifier: 
+  preconditions: []
   speech: We have been reassessing our resources, and as we all know, we are living
     in tough times, so we have to lay you off. I'm afraid the severance package is
     out of the question because we have been told that you are not a very motivated
     worker.
   buttonTexts:
   - I understand. I will take this as a lesson.
+  buttons:
+  - text: I understand. I will take this as a lesson.
+    choice: 7
+    choiceValue: 0
+  - text: Demand
+    choice: 7
+    choiceValue: 1

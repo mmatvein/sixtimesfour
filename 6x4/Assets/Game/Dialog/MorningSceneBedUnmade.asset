@@ -20,3 +20,10 @@ MonoBehaviour:
   buttonTexts:
   - Do it.
   - Don't.
+  buttons:
+  - text: Do it...
+    choice: 0
+    choiceValue: 0
+  - text: Don't...
+    choice: 0
+    choiceValue: 1
