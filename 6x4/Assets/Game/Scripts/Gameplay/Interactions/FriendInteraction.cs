@@ -4,7 +4,7 @@ namespace Game.Scripts.Gameplay
 	using UnityEngine;
 	using Zenject;
 
-	public class BedInteraction : Interaction
+	public class FriendInteraction : Interaction
 	{
 		[SerializeField] GameObject unmadeGameObject = default;
 		[SerializeField] GameObject madeGameObject = default;

@@ -6,8 +6,9 @@ namespace Game.Scripts.Gameplay
 
 	public class CupboardOpenUpper : Interaction
 	{
-		[SerializeField] Animator FriendTalking = default;
-
+		[SerializeField] GameObject cupboardClosedObject = default;
+		[SerializeField] GameObject cupboardUpperOpenObject = default;
+        [SerializeField] GameObject cupboardLowerOpenObject = default;
         [Inject] PlayerMover playerMover = default;
 		[Inject] IPlayerChoiceService playerChoiceService = default;
 
@@ -18,7 +19,7 @@ namespace Game.Scripts.Gameplay
 
 		public override IEnumerator RunInteraction()
 		{
-			yield return this.playerMover.MoveToPosition(this.transform.position - Vector3.left);
+			yield return this.playerMover.MoveToPosition(this.transform.position);
 
 			this.playerChoiceService.RecordChoice(PlayerChoice.Cupboard, PlayerChoiceValues.CUPBOARD_UPPER_OPEN);
 			this.setCupBoard(PlayerChoiceValues.CUPBOARD_UPPER_OPEN);
@@ -26,9 +27,9 @@ namespace Game.Scripts.Gameplay
 
 		void setCupBoard(int cupboard)
 		{
-           /* this.cupboardClosedObject.SetActive(cupboard == PlayerChoiceValues.CUPBOARD_CLOSED);
+            this.cupboardClosedObject.SetActive(cupboard == PlayerChoiceValues.CUPBOARD_CLOSED);
             this.cupboardUpperOpenObject.SetActive(cupboard == PlayerChoiceValues.CUPBOARD_UPPER_OPEN);
-            this.cupboardLowerOpenObject.SetActive(cupboard == PlayerChoiceValues.CUPBOARD_LOWER_OPEN);*/
+            this.cupboardLowerOpenObject.SetActive(cupboard == PlayerChoiceValues.CUPBOARD_LOWER_OPEN);
         }
 	}
 }
