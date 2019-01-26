@@ -19,3 +19,7 @@ MonoBehaviour:
   speech: I've already made my bed
   buttonTexts:
   - Hooray
+  buttons:
+  - text: Hooray
+    choice: 0
+    choiceValue: 0

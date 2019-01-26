@@ -12,7 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8112a686842a64ac39a124413030c27d, type: 3}
   m_Name: BackHomePhoneRings
   m_EditorClassIdentifier: 
+  preconditions: []
   speech: It's mom.
   buttonTexts:
   - Answer. Cry.
   - Ignore. You need to go on a job hunt.
+  buttons:
+  - text: Answer. Cry.
+    choice: 0
+    choiceValue: 0
+  - text: Ignore. You need to go on a job hunt.
+    choice: 0
+    choiceValue: 0
