@@ -4,6 +4,15 @@ namespace Game.Scripts.Gameplay
 	{
 		Undefined = -1,
 		MadeBed,
+        Cupboard,
+        Beggar,
+        Friend,
+        Computer,
+        Cowoker,
+        Lunch,
+        Boss,
+        Mom
+
 	}
 
 	public static class PlayerChoiceValues
@@ -11,8 +20,9 @@ namespace Game.Scripts.Gameplay
 		public const int BED_MADE = 0;
 		public const int BED_UNMADE = 1;
 
-        public const int CUPBOARD_UPPER_OPEN = 0;
-        public const int CUPBOARD_LOWER_OPEN = 1;
+        public const int CUPBOARD_CLOSED = 0;
+        public const int CUPBOARD_UPPER_OPEN = 1;
+        public const int CUPBOARD_LOWER_OPEN = 2;
 
         public const int BEGGAR_IGNORE = 0;
         public const int BEGGAR_DECLINE = 1;
@@ -34,6 +44,12 @@ namespace Game.Scripts.Gameplay
         public const int BOSS_SUBMIT = 0;
         public const int BOSS_DEMAND = 1;
 
+        public const int MOM_CATHARSIS = 0;
+        public const int MOM_BOOTLICKER = 1;
+        public const int MOM_NEUTRAL = 2;
+        public const int MOM_FAMILY = 3;
+        public const int MOM_HOME = 4;
 
-	}
+
+    }
 }
