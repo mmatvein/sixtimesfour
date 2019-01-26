@@ -10,21 +10,15 @@ namespace Game.Scripts.Gameplay
 		[SerializeField] GameObject cupboardUpperOpenObject = default;
         [SerializeField] GameObject cupboardLowerOpenObject = default;
         [Inject] PlayerMover playerMover = default;
-		[Inject] IPlayerChoiceService playerChoiceService = default;
-
-		void Start()
-		{
-
-		}
 
 		public override IEnumerator RunInteraction()
 		{
 			yield return this.playerMover.MoveToPosition(this.transform.position);
 
-			this.setCupBoard(PlayerChoiceValues.CUPBOARD_LOWER_OPEN);
+			this.SetCupBoard(PlayerChoiceValues.CUPBOARD_LOWER_OPEN);
 		}
 
-		void setCupBoard(int cupboard)
+		void SetCupBoard(int cupboard)
 		{
 			this.cupboardClosedObject.SetActive(cupboard == PlayerChoiceValues.CUPBOARD_CLOSED);
 			this.cupboardUpperOpenObject.SetActive(cupboard == PlayerChoiceValues.CUPBOARD_UPPER_OPEN);
