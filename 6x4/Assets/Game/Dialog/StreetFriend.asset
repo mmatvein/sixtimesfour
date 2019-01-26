@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8112a686842a64ac39a124413030c27d, type: 3}
   m_Name: StreetFriend
   m_EditorClassIdentifier: 
+  preconditions: []
   speech: Hi! How is it going for you?
   buttonTexts:
   - I think I'm depressed.
   - I want out of here.
+  buttons:
+  - text: I think I'm depressed.
+    choice: 3
+    choiceValue: 0
+  - text: I want out of here
+    choice: 3
+    choiceValue: 1
+  - text: I'm good. How about you?
+    choice: 3
+    choiceValue: 2

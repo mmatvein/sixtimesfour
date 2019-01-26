@@ -9,7 +9,7 @@ namespace Game.Scripts.Gameplay
 	{
 		public List<Precondition> preconditions;
 		public string speech;
-		public List<string> buttonTexts;
+		public List<Button> buttons;
 
 		[Serializable]
 		public class Precondition
@@ -17,6 +17,14 @@ namespace Game.Scripts.Gameplay
 			public PlayerChoice choice;
 			public int choiceValue;
 			public int assumedChoiceValue;
+		}
+
+		[Serializable]
+		public class Button
+		{
+			public string text;
+			public PlayerChoice choice;
+			public int choiceValue;
 		}
 	}
 }

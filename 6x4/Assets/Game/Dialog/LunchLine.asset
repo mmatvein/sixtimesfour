@@ -12,7 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8112a686842a64ac39a124413030c27d, type: 3}
   m_Name: LunchLine
   m_EditorClassIdentifier: 
-  speech: Potatoes and gravy
+  preconditions: []
+  speech: Lunch...
   buttonTexts:
   - Salad
   - Pizza
+  buttons:
+  - text: Potatoes and Gravy
+    choice: 6
+    choiceValue: 0
+  - text: Salad
+    choice: 6
+    choiceValue: 1
+  - text: Pizza
+    choice: 6
+    choiceValue: 2

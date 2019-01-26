@@ -8,24 +8,18 @@ namespace Game.Scripts.Gameplay
 	{
 		[SerializeField] Animator friendAnimator = default;
 		[Inject] PlayerMover playerMover = default;
-		[Inject] IPlayerChoiceService playerChoiceService = default;
-
-		void Start()
-		{
-
-		}
+		static readonly int TALKING = Animator.StringToHash("Talking");
 
 		public override IEnumerator RunInteraction()
 		{
 			yield return this.playerMover.MoveToPosition(this.transform.position-Vector3.left);
 
-
-			this.talkTofriend();
+			this.TalkToFriend();
 		}
 
-		void talkTofriend()
+		void TalkToFriend()
 		{
-            friendAnimator.SetBool("Talking", true);
+			this.friendAnimator.SetBool(TALKING, true);
 			
 		}
 	}

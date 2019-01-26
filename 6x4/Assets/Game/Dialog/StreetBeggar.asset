@@ -12,8 +12,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8112a686842a64ac39a124413030c27d, type: 3}
   m_Name: StreetBeggar
   m_EditorClassIdentifier: 
+  preconditions: []
   speech: Could you spare a rupee?
   buttonTexts:
   - /ignore
   - No. I don't support human trafficking.
   - '*give rupee*'
+  buttons:
+  - text: /ignore
+    choice: 2
+    choiceValue: 0
+  - text: No. I don't support human trafficking.
+    choice: 2
+    choiceValue: 1
+  - text: '*give rupee*'
+    choice: 2
+    choiceValue: 2

@@ -23,8 +23,7 @@ namespace Game.Scripts.Gameplay
 		public override IEnumerator RunInteraction()
 		{
 			yield return this.playerMover.MoveToPosition(this.transform.position);
-
-			this.playerChoiceService.RecordChoice(PlayerChoice.MadeBed, PlayerChoiceValues.BED_MADE);
+			
 			this.SetBedMade(true);
 		}
 
