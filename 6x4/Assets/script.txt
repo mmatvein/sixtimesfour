@@ -1,0 +1,95 @@
+INTRO
+
+A game by:
+xx
+yy
+zz
+gg
+
+for the global game jam
+and the finnish game jam
+
+6X4
+
+[begin]
+
+If you could live one day in your life
+
+again
+and again
+and again
+
+what would you change?
+and change
+and change
+
+and what does it matter?
+
+Is this the darkest timeline?
+Or one of the lighter ones?
+It's all just a matter of perspective...
+
+They call you Any
+And you live abroad
+And you have a degree
+And you are respectable
+
+And this is the worst day of your life
+
+I am so sorry
+
+1. ROOM MORNING
+[bed]
+Should I make my bed?
+	Yes. Don't say nobody visits here anyway. You do. b0
+	No. I don't care. b1
+
+
+2. STREET
+[friend]
+Hi! How is it going for you?
+	I think I'm depressed. fr0
+	I want out of here. fr1
+= I'm good. How are you?
+Oh I'm great. Just great. Sorry, gotta run. See you!
+
+
+[beggar]
+Could you spare a rupee?
+	/ignore b0
+	No. I don't support human trafficking. (d0 l1) b1
+	*give rupee* b2
+
+[man on street]
+*whistles*
+	/ignore (l2 fr0) m0
+	/flip off
+
+3. OFFICE
+
+[desk]
+	work d0
+	use social media d1
+
+d0: open mini game where you have to click blank spots to write numbers on the paper to the excel.
+d1: *you find out that your ex has gotten married.
+
+4. LUNCH
+
+[lunch line]
+	potatoes and gravy l0
+	salad (b0) l1
+	pizza (b1) l2
+
+
+5. MEETING ROOM
+
+[boss]
+We have been reassessing our resources, and as we all know, we are living in tough times, so we have to lay you off. I'm afraid the severance package is out of the question because we have been told that you are not a very motivated worker.
+	I understand. I will take this as a lesson. (b1) bos1 
+
+6. BACK HOME
+[phone rings]
+It's mom.
+	Answer. Cry. (m0) +catharsis
+	Ignore. You need to go on a job hunt. (bos1) m0 +bootlicker
