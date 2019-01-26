@@ -21,7 +21,6 @@ namespace Game.Scripts.Gameplay
 		{
 			yield return this.playerMover.MoveToPosition(this.transform.position);
 
-			this.playerChoiceService.RecordChoice(PlayerChoice.Cupboard, PlayerChoiceValues.CUPBOARD_LOWER_OPEN);
 			this.setCupBoard(PlayerChoiceValues.CUPBOARD_LOWER_OPEN);
 		}
 

@@ -20,8 +20,7 @@ namespace Game.Scripts.Gameplay
 		public override IEnumerator RunInteraction()
 		{
 			yield return this.playerMover.MoveToPosition(this.transform.position);
-
-			this.playerChoiceService.RecordChoice(PlayerChoice.Cupboard, PlayerChoiceValues.CUPBOARD_UPPER_OPEN);
+            
 			this.setCupBoard(PlayerChoiceValues.CUPBOARD_UPPER_OPEN);
 		}
 

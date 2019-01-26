@@ -6,32 +6,27 @@ namespace Game.Scripts.Gameplay
 
 	public class FriendInteraction : Interaction
 	{
-		[SerializeField] GameObject unmadeGameObject = default;
-		[SerializeField] GameObject madeGameObject = default;
+		[SerializeField] Animator friendAnimator = default;
 		[Inject] PlayerMover playerMover = default;
 		[Inject] IPlayerChoiceService playerChoiceService = default;
 
 		void Start()
 		{
-			var bedMade =
-				this.playerChoiceService.GetChoice(PlayerChoice.MadeBed, PlayerChoiceValues.BED_UNMADE) ==
-				PlayerChoiceValues.BED_MADE;
 
-			this.SetBedMade(bedMade);
 		}
 
 		public override IEnumerator RunInteraction()
 		{
 			yield return this.playerMover.MoveToPosition(this.transform.position);
 
-			this.playerChoiceService.RecordChoice(PlayerChoice.MadeBed, PlayerChoiceValues.BED_MADE);
-			this.SetBedMade(true);
+
+			this.talkTofriend();
 		}
 
-		void SetBedMade(bool isMade)
+		void talkTofriend()
 		{
-			this.unmadeGameObject.SetActive(!isMade);
-			this.madeGameObject.SetActive(isMade);
+            friendAnimator.SetBool("Talking", true);
+			
 		}
 	}
 }
