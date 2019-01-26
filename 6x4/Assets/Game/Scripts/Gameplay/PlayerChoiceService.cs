@@ -15,7 +15,7 @@ namespace Game.Scripts.Gameplay
 	public class PlayerChoiceService : IPlayerChoiceService
 	{
 		readonly Dictionary<PlayerChoice, int> choicesPlayerHasMade = new Dictionary<PlayerChoice, int>();
-		const string SAVE_KEY = "Choices";
+		public const string SAVE_KEY = "Choices";
 
 		public PlayerChoiceService()
 		{
