@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 428321331747676329}
   - component: {fileID: 6050967437323257523}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bed_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -89,7 +89,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9047344081021469801}
   - component: {fileID: 2233935908915808525}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: bed_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -167,7 +167,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3306344832139881876}
-  m_Layer: 0
+  - component: {fileID: 6144671425386077627}
+  - component: {fileID: 1796852386318496996}
+  m_Layer: 8
   m_Name: bed
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -190,3 +192,30 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &6144671425386077627
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5391809817297334157}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 6.35, y: 2.16, z: 1}
+  m_Center: {x: -1.43, y: 1.23, z: 0}
+--- !u!114 &1796852386318496996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5391809817297334157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62fc5c321e1549ba858ca35882a01531, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  unmadeGameObject: {fileID: 293153605335946881}
+  madeGameObject: {fileID: 4491213391648143944}

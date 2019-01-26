@@ -26,7 +26,7 @@ namespace Game.Scripts.Gameplay
 
 			var playerTransform = this.transform;
 			var position = playerTransform.position;
-			
+
 			this.animator.SetBool(ANIMATION_FACING_LEFT, newPosition.x <= position.x);
 			this.animator.SetBool(ANIMATION_WALKING, true);
 
