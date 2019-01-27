@@ -27,6 +27,11 @@ namespace Game.Scripts.UI
 		{
 			this.DestroySpawnedButtons();
 
+			if (buttons.Length == 0)
+			{
+				buttons = new [] { new DialogItem.Button { text = "Ok.", choice = PlayerChoice.Undefined }};
+			}
+
 			this.speechText.text = speech;
 
 			DialogItem.Button chosenButton = null;

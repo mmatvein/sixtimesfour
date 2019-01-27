@@ -18,4 +18,5 @@ MonoBehaviour:
   - WorkScene
   - LunchScene
   - BossScene
+  - EveningScene
   epilogueScene: EpilogueScene

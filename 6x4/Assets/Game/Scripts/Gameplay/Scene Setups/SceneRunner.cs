@@ -53,7 +53,10 @@ namespace Game.Scripts.Gameplay.SceneSetups
 						 button => button.preconditions)
 					.ToArray());
 
-			this.playerChoiceService.RecordChoice(chosenButton.choice, chosenButton.choiceValue);
+			if (chosenButton.choice != PlayerChoice.Undefined)
+			{
+				this.playerChoiceService.RecordChoice(chosenButton.choice, chosenButton.choiceValue);
+			}
 
 			Debug.Log("Result: " + chosenButton.text);
 
@@ -68,7 +71,7 @@ namespace Game.Scripts.Gameplay.SceneSetups
 
 		async Task ShowReaction(string reaction)
 		{
-			await this.speechBubble.ShowAsync(reaction, new DialogItem.Button { text = "Ok." });
+			await this.speechBubble.ShowAsync(reaction);
 		}
 
 		protected abstract IEnumerator HandleResult(int playerChoice);
