@@ -458,6 +458,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogItems:
   - {fileID: 11400000, guid: c8d709047bd9c46109455b479bc5dff5, type: 2}
+  - {fileID: 11400000, guid: 875c41101d1110b4da4c47391d9dd9dc, type: 2}
 --- !u!1 &1547769955
 GameObject:
   m_ObjectHideFlags: 0
