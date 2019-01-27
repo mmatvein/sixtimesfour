@@ -22,7 +22,7 @@ namespace Game.Scripts.Gameplay
 		readonly Fader fader;
 		readonly IPlayerChoiceService playerChoiceService;
 
-		readonly Queue<string> scenes = new Queue<string>();
+		readonly Queue<AvailableScenes.SceneDefinition> scenes = new Queue<AvailableScenes.SceneDefinition>();
 		int iterationIndex = 0;
 
 		public SceneDirector(
@@ -44,23 +44,23 @@ namespace Game.Scripts.Gameplay
 
 		IEnumerator LoadNextScene()
 		{
-			this.fader.ShowFade();
+			var nextScene = this.GetNextScene();
+			
+			this.fader.ShowFade(nextScene.interludeText);
 
 			yield return new WaitForSeconds(2.0f);
 
-			var nextScene = this.GetNextScene();
-
 			var currentActiveScene = SceneManager.GetActiveScene();
 			SceneManager.UnloadSceneAsync(currentActiveScene);
-			yield return SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(nextScene));
+			yield return SceneManager.LoadSceneAsync(nextScene.sceneName, LoadSceneMode.Additive);
+			SceneManager.SetActiveScene(SceneManager.GetSceneByName(nextScene.sceneName));
 
 			yield return new WaitForSeconds(1.0f);
 
 			this.fader.HideFade();
 		}
 
-		string GetNextScene()
+		AvailableScenes.SceneDefinition GetNextScene()
 		{
 			if (this.ShouldShowEpilogue())
 			{
@@ -79,7 +79,7 @@ namespace Game.Scripts.Gameplay
 		{
 			this.iterationIndex++;
 
-			var scenesForRandomization = new List<string>(this.availableScenes.sceneList);
+			var scenesForRandomization = new List<AvailableScenes.SceneDefinition>(this.availableScenes.sceneList);
 
 			while (scenesForRandomization.Count > 0)
 			{

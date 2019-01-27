@@ -26,6 +26,11 @@
 
 			yield return new WaitForSeconds(this.waitBeforeKill);
 
+			while (!Input.GetMouseButtonUp(0) && Input.touchCount == 0)
+			{
+				yield return null;
+			}
+
 			Debug.Log("Quitting");
 			Application.Quit();
 		}

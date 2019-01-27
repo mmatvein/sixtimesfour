@@ -13,10 +13,30 @@ MonoBehaviour:
   m_Name: AvailableScenesInstaller
   m_EditorClassIdentifier: 
   sceneList:
-  - MorningScene
-  - StreetScene
-  - WorkScene
-  - LunchScene
-  - BossScene
-  - EveningScene
-  epilogueScene: EpilogueScene
+  - sceneName: MorningScene
+    interludeText: '7:00 AM
+
+      At home'
+  - sceneName: StreetScene
+    interludeText: '8:00 AM
+
+      On your way to work'
+  - sceneName: WorkScene
+    interludeText: '10:30 AM
+
+      At work'
+  - sceneName: LunchScene
+    interludeText: '1:00 PM
+
+      Lunch break'
+  - sceneName: BossScene
+    interludeText: '3:00 PM
+
+      Your boss'' office'
+  - sceneName: EveningScene
+    interludeText: '9:00 PM
+
+      At home'
+  epilogueScene:
+    sceneName: EpilogueScene
+    interludeText: Epilogue
