@@ -58,9 +58,6 @@ MonoBehaviour:
     choiceValue: 4
     preconditions:
     - choice: 8
-      choiceValue: 1
-      assumedChoiceValue: 0
-    - choice: 8
       choiceValue: 3
       assumedChoiceValue: 0
     - choice: 7
