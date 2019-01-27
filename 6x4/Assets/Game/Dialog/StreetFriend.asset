@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: StreetFriend
   m_EditorClassIdentifier: 
   preconditions: []
-  speech: Hi! How is it going for you?
+  speech: 'Friend:
+
+    Hi! How is it going for you?'
   buttons:
   - text: I think I'm depressed.
     reactionText: You tell him everything's good. He says he's fine too.
