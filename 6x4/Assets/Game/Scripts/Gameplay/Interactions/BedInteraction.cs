@@ -13,11 +13,7 @@ namespace Game.Scripts.Gameplay
 
 		void Start()
 		{
-			var bedMade =
-				this.playerChoiceService.GetChoice(PlayerChoice.MadeBed, PlayerChoiceValues.BED_UNMADE) ==
-				PlayerChoiceValues.BED_MADE;
-
-			this.SetBedMade(bedMade);
+			this.SetBedMade(false);
 		}
 
 		public override IEnumerator RunInteraction()

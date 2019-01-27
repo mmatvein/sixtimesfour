@@ -457,7 +457,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dialogItems:
-  - {fileID: 11400000, guid: 4877c61c91af04b1b8319cf676ffd352, type: 2}
   - {fileID: 11400000, guid: c8d709047bd9c46109455b479bc5dff5, type: 2}
 --- !u!1 &1547769955
 GameObject:
@@ -1071,26 +1070,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
-        type: 3}
-      propertyPath: m_havePropertiesChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
-        type: 3}
-      propertyPath: m_isInputParsingRequired
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
-        type: 3}
-      propertyPath: m_textInfo.lineCount
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
-        type: 3}
-      propertyPath: m_fontSizeBase
-      value: 60
-      objectReference: {fileID: 0}
     - target: {fileID: 958463946881717595, guid: 1d36f680bb57e472b863dda520897f33,
         type: 3}
       propertyPath: m_AnchorMin.y
@@ -1120,6 +1099,26 @@ PrefabInstance:
         type: 3}
       propertyPath: m_SizeDelta.y
       value: 276.01
+      objectReference: {fileID: 0}
+    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
+        type: 3}
+      propertyPath: m_havePropertiesChanged
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
+        type: 3}
+      propertyPath: m_isInputParsingRequired
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
+        type: 3}
+      propertyPath: m_textInfo.lineCount
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 958463946881717596, guid: 1d36f680bb57e472b863dda520897f33,
+        type: 3}
+      propertyPath: m_fontSizeBase
+      value: 60
       objectReference: {fileID: 0}
     - target: {fileID: 958463946875282896, guid: 1d36f680bb57e472b863dda520897f33,
         type: 3}
