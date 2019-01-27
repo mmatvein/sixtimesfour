@@ -21,7 +21,7 @@ namespace Game.Scripts.Gameplay
 		void SetLunch(int lunch)
 		{
 			this.salad.SetActive(lunch != PlayerChoiceValues.LUNCH_SALAD);
-			this.pizza.SetActive(lunch != PlayerChoiceValues.LUNCH_PIZZA);
+			this.pizza.SetActive(lunch == PlayerChoiceValues.LUNCH_PIZZA);
 			this.potatoes.SetActive(lunch != PlayerChoiceValues.LUNCH_POTATOES);
 		}
 	}

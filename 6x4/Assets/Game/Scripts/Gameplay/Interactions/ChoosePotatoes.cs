@@ -11,11 +11,6 @@ namespace Game.Scripts.Gameplay
         [SerializeField] GameObject potatoes = default;
         [Inject] PlayerMover playerMover = default;
 
-		void Start()
-		{
-
-		}
-
 		public override IEnumerator RunInteraction()
 		{
 			yield return this.playerMover.MoveToPosition(this.transform.position);
@@ -27,7 +22,7 @@ namespace Game.Scripts.Gameplay
 		{
 			this.salad.SetActive(lunch != PlayerChoiceValues.LUNCH_SALAD);
 			this.pizza.SetActive(lunch != PlayerChoiceValues.LUNCH_PIZZA);
-            this.potatoes.SetActive(lunch != PlayerChoiceValues.LUNCH_POTATOES);
+            this.potatoes.SetActive(lunch == PlayerChoiceValues.LUNCH_POTATOES);
 		}
 	}
 }
