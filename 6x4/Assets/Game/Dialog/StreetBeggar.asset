@@ -34,7 +34,7 @@ MonoBehaviour:
     choice: 2
     choiceValue: 1
     preconditions:
-    - choice: 7
+    - choice: 6
       choiceValue: 1
       assumedChoiceValue: 0
     - choice: 0
