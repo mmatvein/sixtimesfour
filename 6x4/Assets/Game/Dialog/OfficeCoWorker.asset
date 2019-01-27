@@ -13,10 +13,14 @@ MonoBehaviour:
   m_Name: OfficeCoWorker
   m_EditorClassIdentifier: 
   preconditions: []
-  speech: Hi, seems a bit tense around here today *laughs nervously*
+  speech: 'Coworker:
+
+    Hi, seems a bit tense around here today *laughs nervously*'
   buttons:
   - text: It's okay.
-    reactionText: Ah well, hope so. Surely do.
+    reactionText: 'Coworker:
+
+      Ah well, hope so. Surely do.'
     choice: 5
     choiceValue: 0
     preconditions:
