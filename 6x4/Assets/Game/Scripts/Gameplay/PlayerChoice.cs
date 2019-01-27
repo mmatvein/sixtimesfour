@@ -41,12 +41,13 @@ namespace Game.Scripts.Gameplay
         public const int LUNCH_SALAD = 1;
         public const int LUNCH_PIZZA = 2;
 
-        public const int BOSS_SUBMIT = 0;
-        public const int BOSS_DEMAND = 1;
+        public const int BOSS_IGNORE = 0;
+        public const int BOSS_SUBMIT = 1;
+        public const int BOSS_DEMAND = 2;
 
-        public const int MOM_CATHARSIS = 0;
-        public const int MOM_BOOTLICKER = 1;
-        public const int MOM_NEUTRAL = 2;
+        public const int MOM_NEUTRAL = 0;
+        public const int MOM_CATHARSIS = 1;
+        public const int MOM_BOOTLICKER = 2;
         public const int MOM_FAMILY = 3;
         public const int MOM_HOME = 4;
 

@@ -14,16 +14,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preconditions: []
   speech: Lunch...
-  buttonTexts:
-  - Salad
-  - Pizza
   buttons:
   - text: Potatoes and Gravy
+    reactionText: They really don't make them like they do back home in Finland.
     choice: 6
     choiceValue: 0
+    preconditions: []
   - text: Salad
+    reactionText: Salad! Yoga! Running! Motivation! Coelho quotes!
     choice: 6
     choiceValue: 1
+    preconditions: []
   - text: Pizza
+    reactionText: Oh man. Sometimes junk food is so wholesome. By sometimes I mean
+      always.
     choice: 6
     choiceValue: 2
+    preconditions:
+    - choice: 0
+      choiceValue: 1
+      assumedChoiceValue: 0
+    - choice: 3
+      choiceValue: 0
+      assumedChoiceValue: 1

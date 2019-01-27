@@ -14,13 +14,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preconditions: []
   speech: OfficeDesk
-  buttonTexts:
-  - 
-  - 
   buttons:
   - text: Work
+    reactionText: You copy numbers from a paper to a spreadsheet. You have been doing
+      this for years now. You have an university degree for this. Ferdinand de Saussure
+      is rolling in his grave.
     choice: 4
     choiceValue: 0
+    preconditions: []
   - text: Social Media
+    reactionText: You look up people you know on social media. Your ex has gotten
+      married. Good for him... Not so good for her, though...
     choice: 4
     choiceValue: 1
+    preconditions: []

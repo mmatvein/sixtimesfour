@@ -18,13 +18,13 @@ MonoBehaviour:
     assumedChoiceValue: 1
   speech: I wonder if I should make my bed..
   buttons:
-  - text: Do it...
-    reactionText: Yay, I did it!
+  - text: Make bed
+    reactionText: '''Nobody will come here'' is no excuse. I will come here.'
     choice: 0
     choiceValue: 0
     preconditions: []
-  - text: Don't...
-    reactionText: I'm depressed
+  - text: Don't make bed
+    reactionText: I don't have the energy to do this right now.
     choice: 0
     choiceValue: 1
     preconditions: []

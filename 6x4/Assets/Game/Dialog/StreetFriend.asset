@@ -16,8 +16,12 @@ MonoBehaviour:
   speech: Hi! How is it going for you?
   buttons:
   - text: I think I'm depressed.
+    reactionText: You tell him everything's good. He says he's fine too.
     choice: 3
     choiceValue: 0
+    preconditions: []
   - text: I want out of here
+    reactionText: You tell him everything's good. He says he's fine too.
     choice: 3
     choiceValue: 1
+    preconditions: []

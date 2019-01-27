@@ -18,19 +18,32 @@ MonoBehaviour:
     out of the question because we have been told that you are not a very motivated
     worker.
   buttons:
-  - text: I understand. I will take this as a lesson.
-    reactionText: 
+  - text: Ignore
+    reactionText: You ignore him, pack your things and leave. Fuck that guy and fuck
+      this place.
     choice: 7
     choiceValue: 0
     preconditions:
     - choice: 2
       choiceValue: 1
       assumedChoiceValue: 2
+  - text: I understand. I will take this as a lesson.
+    reactionText: You submit and take this as a growing lesson. This would make a
+      good professional post. You are a true human of late capitalism.
+    choice: 7
+    choiceValue: 1
+    preconditions:
+    - choice: 2
+      choiceValue: 1
+      assumedChoiceValue: 2
+    - choice: 4
+      choiceValue: 0
+      assumedChoiceValue: 1
   - text: Demand and threaten
     reactionText: You tell him about the class action suit and demand a generous severance
       package. The CEO submits and agrees to pay a hefty package.
     choice: 7
-    choiceValue: 1
+    choiceValue: 2
     preconditions:
     - choice: 5
       choiceValue: 1

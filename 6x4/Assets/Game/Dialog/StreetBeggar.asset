@@ -14,17 +14,32 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preconditions: []
   speech: Could you spare a rupee?
-  buttonTexts:
-  - /ignore
-  - No. I don't support human trafficking.
-  - '*give rupee*'
   buttons:
-  - text: /ignore
+  - text: Cry.
+    reactionText: '*sniff* I''m so sorry'
     choice: 2
     choiceValue: 0
+    preconditions:
+    - choice: 6
+      choiceValue: 2
+      assumedChoiceValue: 0
+    - choice: 5
+      choiceValue: 0
+      assumedChoiceValue: 0
   - text: No. I don't support human trafficking.
+    reactionText: You shortly tell that the beggar is part of human trafficking, and
+      refuse to give money. Is she, though?
     choice: 2
     choiceValue: 1
+    preconditions:
+    - choice: 7
+      choiceValue: 1
+      assumedChoiceValue: 0
+    - choice: 0
+      choiceValue: 0
+      assumedChoiceValue: 0
   - text: '*give rupee*'
+    reactionText: You give a rupee. The beggar thanks.
     choice: 2
     choiceValue: 2
+    preconditions: []

@@ -14,13 +14,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preconditions: []
   speech: It's mom.
-  buttonTexts:
-  - Answer. Cry.
-  - Ignore. You need to go on a job hunt.
   buttons:
-  - text: Answer. Cry.
+  - text: Answer, you've been fired.
+    reactionText: You have been fired. Mom asks why. The call ends on bad terms.
     choice: 8
     choiceValue: 0
+    preconditions: []
+  - text: Answer. Cry.
+    reactionText: You tell mom that it's hard. Very hard. She's very supportive and
+      is looking forward for getting you back. You feel a little better.
+    choice: 8
+    choiceValue: 1
+    preconditions:
+    - choice: 2
+      choiceValue: 0
+      assumedChoiceValue: 2
+    - choice: 3
+      choiceValue: 0
+      assumedChoiceValue: 1
   - text: Ignore. You need to go on a job hunt.
-    choice: 0
-    choiceValue: 0
+    reactionText: Life is hard so you need to be harder. Mom can wait. You whonder
+      what that big black ball is in your chest. Maybe nothing.
+    choice: 8
+    choiceValue: 2
+    preconditions:
+    - choice: 7
+      choiceValue: 1
+      assumedChoiceValue: 2
+  - text: Answer. Ask about niece.
+    reactionText: Life is hard so you need to be harder. Mom can wait. You whonder
+      what that big black ball is in your chest. Maybe nothing.
+    choice: 8
+    choiceValue: 3
+    preconditions:
+    - choice: 1
+      choiceValue: 2
+      assumedChoiceValue: 0
+  - text: Answer. Tell about depression and that you want to do art again.
+    reactionText: You tell mom about the severance package and the harsh working conditions.
+      You will be returning to do art. She is surprisingly supportive and wants you
+      to look after your niece.
+    choice: 8
+    choiceValue: 4
+    preconditions:
+    - choice: 8
+      choiceValue: 1
+      assumedChoiceValue: 0
+    - choice: 8
+      choiceValue: 3
+      assumedChoiceValue: 0
+    - choice: 7
+      choiceValue: 2
+      assumedChoiceValue: 0

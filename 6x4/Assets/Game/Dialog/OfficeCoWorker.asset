@@ -19,6 +19,10 @@ MonoBehaviour:
     reactionText: Ah well, hope so. Surely do.
     choice: 5
     choiceValue: 0
+    preconditions:
+    - choice: 3
+      choiceValue: 0
+      assumedChoiceValue: 1
   - text: '*be supportive*'
     reactionText: So, I need to tell you something about the layoffs. We've been in
       contact with the union lawyer who tells us that the discharges are illegal.
@@ -26,3 +30,7 @@ MonoBehaviour:
       in fine print and legalese.
     choice: 5
     choiceValue: 1
+    preconditions:
+    - choice: 2
+      choiceValue: 2
+      assumedChoiceValue: 0
