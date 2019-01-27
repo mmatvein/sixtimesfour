@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: StreetBeggar
   m_EditorClassIdentifier: 
   preconditions: []
-  speech: Could you spare a rupee?
+  speech: 'Beggar:
+
+    Could you spare a rupee?'
   buttons:
   - text: Cry.
     reactionText: '*sniff* I''m so sorry'
