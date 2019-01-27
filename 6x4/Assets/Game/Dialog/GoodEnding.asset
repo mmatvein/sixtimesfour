@@ -14,7 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preconditions:
   - choice: 8
-    choiceValue: 0
+    choiceValue: 4
     assumedChoiceValue: 0
-  speech: 
+  speech: You return with a hefty severance package to start your career as an artist.
+    You have a good portfolio and start a deal with a children's book publisher while
+    looking after your niece. It feels good to return home. This is the best outcome.
   buttons: []

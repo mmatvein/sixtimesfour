@@ -16,5 +16,6 @@ MonoBehaviour:
   - choice: 8
     choiceValue: 3
     assumedChoiceValue: 0
-  speech: You return home to look after your niece and...
+  speech: You return home to look after your niece. Your sister is in a bad place
+    right now, but is able to visit you and she is happy that you're back.
   buttons: []
