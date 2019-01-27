@@ -8,7 +8,7 @@ namespace Game.Scripts.Gameplay
 	public class DialogItem : ScriptableObject
 	{
 		public List<Precondition> preconditions;
-		public string speech;
+		[TextArea] public string speech;
 		public List<Button> buttons;
 
 		[Serializable]
@@ -23,7 +23,7 @@ namespace Game.Scripts.Gameplay
 		public class Button
 		{
 			public string text;
-            public string reactionText;
+            [TextArea] public string reactionText;
 			public PlayerChoice choice;
 			public int choiceValue;
             public List<Precondition> preconditions;
