@@ -2,6 +2,7 @@ namespace Game.Scripts.UI
 {
 	using System.Collections.Generic;
 	using System.Threading.Tasks;
+	using Gameplay;
 	using TMPro;
 	using UnityEngine;
 
@@ -10,44 +11,42 @@ namespace Game.Scripts.UI
 		[SerializeField] TextMeshProUGUI speechText = default;
 		[SerializeField] SpeechBubbleButton buttonPrefab = default;
 
-		List<SpeechBubbleButton> spawnedButtons;
-
-        //tuhoaa kaikki lapsiobjektit
-        public void flush()
+		List<SpeechBubbleButton> spawnedButtons = new List<SpeechBubbleButton>();
+		
+		void DestroySpawnedButtons()
         {
-            foreach (Transform child in transform)
+            foreach (var button in this.spawnedButtons)
             {
-                Destroy(child.gameObject);
+                Destroy(button.gameObject);
             }
-        }
 
-		public async Task<int> ShowAsync(string speech, params string[] buttonTexts)
+			this.spawnedButtons.Clear();
+		}
+
+		public async Task<DialogItem.Button> ShowAsync(string speech, params DialogItem.Button[] buttons)
 		{
+			this.DestroySpawnedButtons();
 
-			this.gameObject.SetActive(true);
-			
 			this.speechText.text = speech;
 
-			this.spawnedButtons = new List<SpeechBubbleButton>();
-			var chosenButtonIndex = -1;
-			var buttonIndex = 0;
-			foreach (var buttonText in buttonTexts)
+			DialogItem.Button chosenButton = null;
+			foreach (var button in buttons)
 			{
-				var button = Instantiate(this.buttonPrefab, this.transform);
-				var index = buttonIndex;
-				button.Setup(buttonText, () => chosenButtonIndex = index);
-				this.spawnedButtons.Add(button);
-				buttonIndex++;
+				var buttonInstance = Instantiate(this.buttonPrefab, this.transform);
+				buttonInstance.Setup(button, () => chosenButton = button);
+				this.spawnedButtons.Add(buttonInstance);
 			}
+			
+			this.gameObject.SetActive(true);
 
-			while (chosenButtonIndex == -1)
+			while (chosenButton == null)
 			{
 				await Task.Yield();
 			}
 			
 			this.gameObject.SetActive(false);
 			
-			return chosenButtonIndex;
+			return chosenButton;
 		}
 	}
 }

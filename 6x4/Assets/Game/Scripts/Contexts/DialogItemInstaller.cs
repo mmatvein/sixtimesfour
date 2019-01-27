@@ -19,22 +19,9 @@ namespace Game.Scripts.Contexts
 
 		void SetupDialog()
 		{
-			var validDialogItems = this.dialogItems.Where(
-				item =>
-				{
-					foreach (var precondition in item.preconditions)
-					{
-						if (this.playerChoiceService.GetChoice(
-								precondition.choice,
-								precondition.assumedChoiceValue) !=
-							precondition.choiceValue)
-						{
-							return false;
-						}
-					}
-
-					return true;
-				});
+			var validDialogItems = this.dialogItems.FilterForPreconditions(
+				this.playerChoiceService,
+				item => item.preconditions);
 
 			var firstValidItem = validDialogItems.FirstOrDefault();
 

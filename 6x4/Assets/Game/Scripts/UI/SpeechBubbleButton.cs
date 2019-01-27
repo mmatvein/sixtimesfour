@@ -1,5 +1,6 @@
 namespace Game.Scripts.UI
 {
+	using Gameplay;
 	using TMPro;
 	using UnityEngine;
 	using UnityEngine.Events;
@@ -10,9 +11,9 @@ namespace Game.Scripts.UI
 		[SerializeField] Button button = default;
 		[SerializeField] TextMeshProUGUI buttonText = default;
 
-		public void Setup(string text, UnityAction onClick)
+		public void Setup(DialogItem.Button buttonData, UnityAction onClick)
 		{
-			this.buttonText.text = text;
+			this.buttonText.text = buttonData.text;
 			this.button.onClick.AddListener(onClick);
 		}
 	}

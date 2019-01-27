@@ -17,13 +17,14 @@ MonoBehaviour:
     choiceValue: 1
     assumedChoiceValue: 1
   speech: I wonder if I should make my bed..
-  buttonTexts:
-  - Do it.
-  - Don't.
   buttons:
   - text: Do it...
+    reactionText: Yay, I did it!
     choice: 0
     choiceValue: 0
+    preconditions: []
   - text: Don't...
+    reactionText: I'm depressed
     choice: 0
     choiceValue: 1
+    preconditions: []
