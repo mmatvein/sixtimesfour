@@ -17,12 +17,21 @@ MonoBehaviour:
     in tough times, so we have to lay you off. I'm afraid the severance package is
     out of the question because we have been told that you are not a very motivated
     worker.
-  buttonTexts:
-  - I understand. I will take this as a lesson.
   buttons:
-  - text: I understand. I will take this as a lesson.
+  - text: Submit
+    reactionText: I understand. I will take this as a lesson...
     choice: 7
     choiceValue: 0
-  - text: Demand
+    preconditions:
+    - choice: 2
+      choiceValue: 1
+      assumedChoiceValue: 2
+  - text: Demand and threaten
+    reactionText: Tell about the class action suit and demand a severance package.
+      The CEO silently agrees to pay.
     choice: 7
     choiceValue: 1
+    preconditions:
+    - choice: 5
+      choiceValue: 0
+      assumedChoiceValue: 0

@@ -23,8 +23,10 @@ namespace Game.Scripts.Gameplay
 		public class Button
 		{
 			public string text;
+            public string reactionText;
 			public PlayerChoice choice;
 			public int choiceValue;
+            public List<Precondition> preconditions;
 		}
 	}
 }

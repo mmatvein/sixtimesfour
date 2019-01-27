@@ -12,14 +12,23 @@ namespace Game.Scripts.UI
 
 		List<SpeechBubbleButton> spawnedButtons;
 
+        //tuhoaa kaikki lapsiobjektit
+        public void flush()
+        {
+            foreach (Transform child in transform)
+            {
+                Destroy(child.gameObject);
+            }
+        }
+
 		public async Task<int> ShowAsync(string speech, params string[] buttonTexts)
 		{
+
 			this.gameObject.SetActive(true);
 			
 			this.speechText.text = speech;
 
 			this.spawnedButtons = new List<SpeechBubbleButton>();
-
 			var chosenButtonIndex = -1;
 			var buttonIndex = 0;
 			foreach (var buttonText in buttonTexts)

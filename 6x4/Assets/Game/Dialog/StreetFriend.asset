@@ -14,9 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   preconditions: []
   speech: Hi! How is it going for you?
-  buttonTexts:
-  - I think I'm depressed.
-  - I want out of here.
   buttons:
   - text: I think I'm depressed.
     choice: 3
@@ -24,6 +21,3 @@ MonoBehaviour:
   - text: I want out of here
     choice: 3
     choiceValue: 1
-  - text: I'm good. How about you?
-    choice: 3
-    choiceValue: 2

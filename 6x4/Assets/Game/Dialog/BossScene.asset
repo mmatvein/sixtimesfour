@@ -19,8 +19,19 @@ MonoBehaviour:
     worker.
   buttons:
   - text: I understand. I will take this as a lesson.
+    reactionText: 
     choice: 7
     choiceValue: 0
-  - text: Tell him about the class action suit and demand a generous severance package
+    preconditions:
+    - choice: 2
+      choiceValue: 1
+      assumedChoiceValue: 2
+  - text: Demand and threaten
+    reactionText: You tell him about the class action suit and demand a generous severance
+      package. The CEO submits and agrees to pay a hefty package.
     choice: 7
     choiceValue: 1
+    preconditions:
+    - choice: 5
+      choiceValue: 1
+      assumedChoiceValue: 0
