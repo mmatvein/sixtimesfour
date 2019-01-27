@@ -27,6 +27,9 @@ EditorBuildSettings:
     path: Assets/Game/Scenes/BossScene.unity
     guid: ebdf5b128f434cf4a8a064ab91c8a978
   - enabled: 1
+    path: Assets/Game/Scenes/EveningScene.unity
+    guid: b814890edb9d7d84eaf27e69b7ce1777
+  - enabled: 1
     path: Assets/Game/Scenes/EpilogueScene.unity
     guid: 4c73f27276ec84233bd2c83582c3c7ed
   m_configObjects: {}
