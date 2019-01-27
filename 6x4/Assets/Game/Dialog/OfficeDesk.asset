@@ -17,7 +17,7 @@ MonoBehaviour:
   buttons:
   - text: Work
     reactionText: You copy numbers from a paper to a spreadsheet. You have been doing
-      this for years now. You have an university degree for this. Ferdinand de Saussure
+      this for years now. You have a university degree for this. Ferdinand de Saussure
       is rolling in his grave.
     choice: 4
     choiceValue: 0
