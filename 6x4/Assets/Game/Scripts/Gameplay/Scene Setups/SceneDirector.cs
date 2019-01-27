@@ -3,6 +3,7 @@ namespace Game.Scripts.Gameplay
 	using System.Collections;
 	using System.Collections.Generic;
 	using Core;
+	using JetBrains.Annotations;
 	using SceneSetups;
 	using UI;
 	using UnityEngine;
@@ -13,6 +14,7 @@ namespace Game.Scripts.Gameplay
 		void CurrentSceneDone();
 	}
 	
+	[UsedImplicitly]
 	public class SceneDirector : ISceneDirector
 	{
 		readonly CoroutineRunner coroutineRunner;
@@ -54,20 +56,22 @@ namespace Game.Scripts.Gameplay
 		string GetNextScene()
 		{
 			if (this.scenes.Count == 0)
+			{
 				this.RandomizeNewSceneCycle();
+			}
 
 			return this.scenes.Dequeue();
 		}
 
 		void RandomizeNewSceneCycle()
 		{
-			var scenes = new List<string>(this.availableScenes.sceneList);
+			var scenesForRandomization = new List<string>(this.availableScenes.sceneList);
 
-			while (scenes.Count > 0)
+			while (scenesForRandomization.Count > 0)
 			{
-				int index = Random.Range(0, scenes.Count);
-				this.scenes.Enqueue(scenes[index]);
-				scenes.RemoveAt(index);
+				var index = Random.Range(0, scenesForRandomization.Count);
+				this.scenes.Enqueue(scenesForRandomization[index]);
+				scenesForRandomization.RemoveAt(index);
 			}
 		}
 	}
