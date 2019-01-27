@@ -16,7 +16,7 @@ namespace Game.Scripts.Gameplay.SceneSetups
 	public abstract class SceneRunner : MonoBehaviour
 	{
 		[Inject] SpeechBubble speechBubble = default;
-		[Inject] DialogItem dialogItem = default;
+		[Inject] DialogItem[] dialogItems = default;
 		[Inject] IPlayerChoiceService playerChoiceService = default;
 		[Inject] CoroutineRunner coroutineRunner = default;
 		[Inject] ISceneDirector sceneDirector = default;
@@ -30,24 +30,9 @@ namespace Game.Scripts.Gameplay.SceneSetups
 		{
 			try
 			{
-				var chosenButton = await this.speechBubble.ShowAsync(
-					this.dialogItem.speech,
-					this.dialogItem.buttons
-						.FilterForPreconditions(
-							 this.playerChoiceService,
-							 button => button.preconditions)
-						.ToArray());
-
-				this.playerChoiceService.RecordChoice(chosenButton.choice, chosenButton.choiceValue);
-
-				Debug.Log("Result: " + chosenButton.text);
-
-				await this.coroutineRunner.RunCoroutineAsTask(this.HandleResult(chosenButton.choiceValue));
-				
-				var reaction = chosenButton.reactionText;
-				if (!string.IsNullOrEmpty(reaction))
+				foreach (var dialogItem in this.dialogItems)
 				{
-					await this.ShowReaction(reaction);
+					await this.ShowDialog(dialogItem);
 				}
 
 				this.sceneDirector.CurrentSceneDone();
@@ -55,6 +40,29 @@ namespace Game.Scripts.Gameplay.SceneSetups
 			catch (Exception e)
 			{
 				Debug.LogException(e);
+			}
+		}
+
+		async Task ShowDialog(DialogItem dialogItem)
+		{
+			var chosenButton = await this.speechBubble.ShowAsync(
+				dialogItem.speech,
+				dialogItem.buttons
+					.FilterForPreconditions(
+						 this.playerChoiceService,
+						 button => button.preconditions)
+					.ToArray());
+
+			this.playerChoiceService.RecordChoice(chosenButton.choice, chosenButton.choiceValue);
+
+			Debug.Log("Result: " + chosenButton.text);
+
+			await this.coroutineRunner.RunCoroutineAsTask(this.HandleResult(chosenButton.choiceValue));
+				
+			var reaction = chosenButton.reactionText;
+			if (!string.IsNullOrEmpty(reaction))
+			{
+				await this.ShowReaction(reaction);
 			}
 		}
 

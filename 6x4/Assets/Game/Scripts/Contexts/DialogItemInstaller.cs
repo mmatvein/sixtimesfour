@@ -19,17 +19,15 @@ namespace Game.Scripts.Contexts
 
 		void SetupDialog()
 		{
-			var validDialogItems = this.dialogItems.FilterForPreconditions(
-				this.playerChoiceService,
-				item => item.preconditions);
-
-			var firstValidItem = validDialogItems.FirstOrDefault();
-
-			if (firstValidItem != null)
-			{
-				this.Container.BindInstance(firstValidItem);
-			}
-			else
+			var validDialogItems = this.dialogItems
+				.FilterForPreconditions(
+					this.playerChoiceService,
+					item => item.preconditions)
+				.ToArray();
+			
+			this.Container.BindInstance(validDialogItems);
+			
+			if (validDialogItems.Length == 0)
 			{
 				Debug.LogWarning("No dialog item is valid based on preconditions!");
 			}
