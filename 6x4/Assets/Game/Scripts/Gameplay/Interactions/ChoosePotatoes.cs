@@ -10,7 +10,6 @@ namespace Game.Scripts.Gameplay
 		[SerializeField] GameObject pizza = default;
         [SerializeField] GameObject potatoes = default;
         [Inject] PlayerMover playerMover = default;
-		[Inject] IPlayerChoiceService playerChoiceService = default;
 
 		void Start()
 		{

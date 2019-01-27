@@ -9,7 +9,7 @@ namespace Game.Scripts.Contexts
 
 	public class ProjectContextInstaller : MonoInstaller
 	{
-		[SerializeField] Fader fader;
+		[SerializeField] Fader fader = default;
         public override void InstallBindings()
         {
 			this.Container.Bind<IInputService>().To<InputService>().AsSingle();

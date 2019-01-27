@@ -6,26 +6,20 @@ namespace Game.Scripts.Gameplay
 
 	public class CoWorkerInteraction : Interaction
 	{
-		[SerializeField] Animator CoworkerAnimator= default;
+		[SerializeField] Animator CoworkerAnimator = default;
 		[Inject] PlayerMover playerMover = default;
-		[Inject] IPlayerChoiceService playerChoiceService = default;
-
-		void Start()
-		{
-
-		}
+		static readonly int TALKING = Animator.StringToHash("Talking");
 
 		public override IEnumerator RunInteraction()
 		{
 			yield return this.playerMover.MoveToPosition(this.transform.position-Vector3.right);
 
-
-			this.talkTofriend();
+			this.TalkToFriend();
 		}
 
-		void talkTofriend()
+		void TalkToFriend()
 		{
-            CoworkerAnimator.SetBool("Talking", true);
+			this.CoworkerAnimator.SetBool(TALKING, true);
 			
 		}
 	}

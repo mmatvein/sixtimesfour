@@ -4,7 +4,7 @@ namespace Game.Scripts.UI
 
 	public class Fader : MonoBehaviour
 	{
-		[SerializeField] Animator animator;
+		[SerializeField] Animator animator = default;
 		static readonly int SHOW = Animator.StringToHash("Show");
 		static readonly int HIDE = Animator.StringToHash("Hide");
 

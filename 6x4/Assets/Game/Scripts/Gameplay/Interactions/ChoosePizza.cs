@@ -8,27 +8,21 @@ namespace Game.Scripts.Gameplay
 	{
 		[SerializeField] GameObject salad = default;
 		[SerializeField] GameObject pizza = default;
-        [SerializeField] GameObject potatoes = default;
-        [Inject] PlayerMover playerMover = default;
-		[Inject] IPlayerChoiceService playerChoiceService = default;
-
-		void Start()
-		{
-
-		}
+		[SerializeField] GameObject potatoes = default;
+		[Inject] PlayerMover playerMover = default;
 
 		public override IEnumerator RunInteraction()
 		{
 			yield return this.playerMover.MoveToPosition(this.transform.position);
 
-			this.setLunch(PlayerChoiceValues.LUNCH_PIZZA);
+			this.SetLunch(PlayerChoiceValues.LUNCH_PIZZA);
 		}
 
-		void setLunch(int lunch)
+		void SetLunch(int lunch)
 		{
 			this.salad.SetActive(lunch != PlayerChoiceValues.LUNCH_SALAD);
 			this.pizza.SetActive(lunch != PlayerChoiceValues.LUNCH_PIZZA);
-            this.potatoes.SetActive(lunch != PlayerChoiceValues.LUNCH_POTATOES);
+			this.potatoes.SetActive(lunch != PlayerChoiceValues.LUNCH_POTATOES);
 		}
 	}
 }
