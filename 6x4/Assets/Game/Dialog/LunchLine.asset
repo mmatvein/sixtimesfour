@@ -25,7 +25,7 @@ MonoBehaviour:
     choice: 6
     choiceValue: 1
     preconditions: []
-  - text: Pizza
+  - text: Burger
     reactionText: Oh man. Sometimes junk food is so wholesome. By sometimes I mean
       always.
     choice: 6

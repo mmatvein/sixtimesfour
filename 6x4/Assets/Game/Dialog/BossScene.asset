@@ -23,10 +23,7 @@ MonoBehaviour:
       this place.
     choice: 7
     choiceValue: 0
-    preconditions:
-    - choice: 2
-      choiceValue: 1
-      assumedChoiceValue: 2
+    preconditions: []
   - text: I understand. I will take this as a lesson.
     reactionText: You submit and take this as a growing lesson. This would make a
       good professional post. You are a true human of late capitalism.
