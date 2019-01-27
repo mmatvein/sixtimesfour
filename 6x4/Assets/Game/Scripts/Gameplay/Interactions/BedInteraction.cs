@@ -8,12 +8,18 @@ namespace Game.Scripts.Gameplay
 	{
 		[SerializeField] GameObject unmadeGameObject = default;
 		[SerializeField] GameObject madeGameObject = default;
+		[SerializeField] bool forceBedUnmade = default;
+		
 		[Inject] PlayerMover playerMover = default;
 		[Inject] IPlayerChoiceService playerChoiceService = default;
 
 		void Start()
 		{
-			this.SetBedMade(false);
+			var bedMade = !this.forceBedUnmade &&
+				this.playerChoiceService.GetChoice(PlayerChoice.MadeBed, PlayerChoiceValues.BED_UNMADE) ==
+				PlayerChoiceValues.BED_MADE;
+
+			this.SetBedMade(bedMade);
 		}
 
 		public override IEnumerator RunInteraction()
