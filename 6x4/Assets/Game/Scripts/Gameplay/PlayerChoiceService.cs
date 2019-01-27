@@ -19,14 +19,14 @@ namespace Game.Scripts.Gameplay
 
 		public PlayerChoiceService()
 		{
-			this.LoadChoices();
+			//this.LoadChoices();
 		}
 
 		public void RecordChoice(PlayerChoice choice, int choiceValue)
 		{
 			this.choicesPlayerHasMade[choice] = choiceValue;
 
-			this.SaveChoices();
+			//this.SaveChoices();
 		}
 
 		public int GetChoice(PlayerChoice choice, int defaultValue) =>
