@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BackHomePhoneRings
   m_EditorClassIdentifier: 
   preconditions: []
-  speech: It's mom.
+  speech: The phone rings. It's mom.
   buttons:
   - text: Answer, you've been fired.
     reactionText: You have been fired. Mom asks why. The call ends on bad terms.
