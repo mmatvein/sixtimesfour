@@ -29,7 +29,7 @@ namespace Game.Scripts.UI
 
 			if (buttons.Length == 0)
 			{
-				buttons = new [] { new DialogItem.Button { text = "Ok.", choice = PlayerChoice.Undefined }};
+				buttons = new [] { new DialogItem.Button { text = "Continue", choice = PlayerChoice.Undefined }};
 			}
 
 			this.speechText.text = speech;
