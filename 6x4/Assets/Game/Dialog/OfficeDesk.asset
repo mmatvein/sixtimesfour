@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: OfficeDesk
   m_EditorClassIdentifier: 
   preconditions: []
-  speech: OfficeDesk
+  speech: Oh yeah. Work. I should at least try to pretend to work, I guess.
   buttons:
   - text: Work
     reactionText: You copy numbers from a paper to a spreadsheet. You have been doing

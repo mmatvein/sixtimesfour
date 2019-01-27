@@ -43,3 +43,8 @@ MonoBehaviour:
     choice: 2
     choiceValue: 2
     preconditions: []
+  - text: I have no money
+    reactionText: You (probably) have no money. Sorry.
+    choice: 2
+    choiceValue: 3
+    preconditions: []

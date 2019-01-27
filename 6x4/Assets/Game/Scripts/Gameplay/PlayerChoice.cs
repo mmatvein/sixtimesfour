@@ -27,6 +27,8 @@ namespace Game.Scripts.Gameplay
         public const int BEGGAR_IGNORE = 0;
         public const int BEGGAR_DECLINE = 1;
         public const int BEGGAR_GIVECOIN = 2;
+        public const int BEGGAR_NOMONEY = 3;
+
 
         public const int FRIEND_DEPRESSED = 0;
         public const int FRIEND_IWANTOUT = 1;
