@@ -4,6 +4,7 @@ namespace Game.Scripts.Gameplay
 	using System.Collections.Generic;
 	using Core;
 	using SceneSetups;
+	using UI;
 	using UnityEngine;
 	using UnityEngine.SceneManagement;
 
@@ -16,13 +17,15 @@ namespace Game.Scripts.Gameplay
 	{
 		readonly CoroutineRunner coroutineRunner;
 		readonly AvailableScenes availableScenes;
+		readonly Fader fader;
 
 		readonly Queue<string> scenes = new Queue<string>();
 
-		public SceneDirector(CoroutineRunner coroutineRunner, AvailableScenes availableScenes)
+		public SceneDirector(CoroutineRunner coroutineRunner, AvailableScenes availableScenes, Fader fader)
 		{
 			this.coroutineRunner = coroutineRunner;
 			this.availableScenes = availableScenes;
+			this.fader = fader;
 		}
 
 		public void CurrentSceneDone()
@@ -32,12 +35,20 @@ namespace Game.Scripts.Gameplay
 
 		IEnumerator LoadNextScene()
 		{
+			this.fader.ShowFade();
+
+			yield return new WaitForSeconds(2.0f);
+			
 			var nextScene = this.GetNextScene(); 
 			
 			var currentActiveScene = SceneManager.GetActiveScene();
 			SceneManager.UnloadSceneAsync(currentActiveScene);
 			yield return SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
-			SceneManager.SetActiveScene(SceneManager.GetSceneByName(nextScene));	
+			SceneManager.SetActiveScene(SceneManager.GetSceneByName(nextScene));
+
+			yield return new WaitForSeconds(1.0f);
+			
+			this.fader.HideFade();
 		}
 
 		string GetNextScene()
