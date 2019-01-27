@@ -5,6 +5,7 @@ namespace Game.Scripts.Gameplay.SceneSetups
 	public class AvailableScenes : ScriptableObjectInstaller
 	{
 		public string[] sceneList;
+		public string epilogueScene;
 
 		public override void InstallBindings()
 		{

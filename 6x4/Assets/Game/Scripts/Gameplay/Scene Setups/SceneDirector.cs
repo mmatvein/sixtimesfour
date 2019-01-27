@@ -13,21 +13,28 @@ namespace Game.Scripts.Gameplay
 	{
 		void CurrentSceneDone();
 	}
-	
+
 	[UsedImplicitly]
 	public class SceneDirector : ISceneDirector
 	{
 		readonly CoroutineRunner coroutineRunner;
 		readonly AvailableScenes availableScenes;
 		readonly Fader fader;
+		readonly IPlayerChoiceService playerChoiceService;
 
 		readonly Queue<string> scenes = new Queue<string>();
+		int iterationIndex = 0;
 
-		public SceneDirector(CoroutineRunner coroutineRunner, AvailableScenes availableScenes, Fader fader)
+		public SceneDirector(
+			CoroutineRunner coroutineRunner,
+			AvailableScenes availableScenes,
+			Fader fader,
+			IPlayerChoiceService playerChoiceService)
 		{
 			this.coroutineRunner = coroutineRunner;
 			this.availableScenes = availableScenes;
 			this.fader = fader;
+			this.playerChoiceService = playerChoiceService;
 		}
 
 		public void CurrentSceneDone()
@@ -40,21 +47,26 @@ namespace Game.Scripts.Gameplay
 			this.fader.ShowFade();
 
 			yield return new WaitForSeconds(2.0f);
-			
-			var nextScene = this.GetNextScene(); 
-			
+
+			var nextScene = this.GetNextScene();
+
 			var currentActiveScene = SceneManager.GetActiveScene();
 			SceneManager.UnloadSceneAsync(currentActiveScene);
 			yield return SceneManager.LoadSceneAsync(nextScene, LoadSceneMode.Additive);
 			SceneManager.SetActiveScene(SceneManager.GetSceneByName(nextScene));
 
 			yield return new WaitForSeconds(1.0f);
-			
+
 			this.fader.HideFade();
 		}
 
 		string GetNextScene()
 		{
+			if (this.ShouldShowEpilogue())
+			{
+				return this.availableScenes.epilogueScene;
+			}
+
 			if (this.scenes.Count == 0)
 			{
 				this.RandomizeNewSceneCycle();
@@ -65,6 +77,8 @@ namespace Game.Scripts.Gameplay
 
 		void RandomizeNewSceneCycle()
 		{
+			this.iterationIndex++;
+
 			var scenesForRandomization = new List<string>(this.availableScenes.sceneList);
 
 			while (scenesForRandomization.Count > 0)
@@ -74,5 +88,15 @@ namespace Game.Scripts.Gameplay
 				scenesForRandomization.RemoveAt(index);
 			}
 		}
+
+		bool ShouldShowEpilogue() =>
+			this.PlayerHasChosenCorrectMomValue() ||
+			this.scenes.Count == 0 && this.iterationIndex > 3;
+
+		bool PlayerHasChosenCorrectMomValue() =>
+			this.playerChoiceService.GetChoice(
+				PlayerChoice.Mom, 
+				PlayerChoiceValues.MOM_NEUTRAL) ==
+			PlayerChoiceValues.MOM_HOME;
 	}
 }
