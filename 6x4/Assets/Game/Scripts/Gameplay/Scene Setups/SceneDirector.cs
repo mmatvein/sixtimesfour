@@ -79,13 +79,9 @@ namespace Game.Scripts.Gameplay
 		{
 			this.iterationIndex++;
 
-			var scenesForRandomization = new List<AvailableScenes.SceneDefinition>(this.availableScenes.sceneList);
-
-			while (scenesForRandomization.Count > 0)
+			foreach (var scene in this.availableScenes.sceneList)
 			{
-				var index = Random.Range(0, scenesForRandomization.Count);
-				this.scenes.Enqueue(scenesForRandomization[index]);
-				scenesForRandomization.RemoveAt(index);
+				this.scenes.Enqueue(scene);
 			}
 		}
 
