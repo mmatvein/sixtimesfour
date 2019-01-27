@@ -10,7 +10,7 @@ namespace Game.Scripts.Gameplay.SceneSetups
 		[SerializeField] Transform beggarTransform = default;
 		[SerializeField] Vector3 talkToFriendPosition = default;
 		[SerializeField] Vector3 offScreenPosition = default;
-		[Inject] PlayerMover playerMover;
+		[Inject] PlayerMover playerMover = default;
 		
 		protected override IEnumerator HandleResult(PlayerChoice choice, int choiceValue)
 		{
