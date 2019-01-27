@@ -17,10 +17,10 @@ MonoBehaviour:
 
     Hi, seems a bit tense around here today *laughs nervously*'
   buttons:
-  - text: It's okay.
+  - text: '*try to hold tears*'
     reactionText: 'Coworker:
 
-      Ah well, hope so. Surely do.'
+      Oh. Umm. Yeah... It sure is hard for everyone here.'
     choice: 5
     choiceValue: 0
     preconditions:
@@ -38,3 +38,10 @@ MonoBehaviour:
     - choice: 2
       choiceValue: 2
       assumedChoiceValue: 0
+  - text: Yeah, I don't know what's happening here.
+    reactionText: 'Coworker:
+
+      Seems like layoffs are happening. I guess we''ll see how this goes.'
+    choice: 5
+    choiceValue: 3
+    preconditions: []
