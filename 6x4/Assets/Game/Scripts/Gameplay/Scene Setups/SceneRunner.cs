@@ -60,7 +60,7 @@ namespace Game.Scripts.Gameplay.SceneSetups
 
 			Debug.Log("Result: " + chosenButton.text);
 
-			await this.coroutineRunner.RunCoroutineAsTask(this.HandleResult(chosenButton.choiceValue));
+			await this.coroutineRunner.RunCoroutineAsTask(this.HandleResult(chosenButton.choice, chosenButton.choiceValue));
 				
 			var reaction = chosenButton.reactionText;
 			if (!string.IsNullOrEmpty(reaction))
@@ -74,6 +74,6 @@ namespace Game.Scripts.Gameplay.SceneSetups
 			await this.speechBubble.ShowAsync(reaction);
 		}
 
-		protected abstract IEnumerator HandleResult(int playerChoice);
+		protected abstract IEnumerator HandleResult(PlayerChoice choice, int choiceValue);
 	}
 }

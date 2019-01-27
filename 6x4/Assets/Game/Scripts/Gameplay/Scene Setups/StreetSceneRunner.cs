@@ -7,7 +7,7 @@ namespace Game.Scripts.Gameplay.SceneSetups
 
 	public class StreetSceneRunner : SceneRunner
 	{
-		protected override IEnumerator HandleResult(int playerChoice)
+		protected override IEnumerator HandleResult(PlayerChoice choice, int choiceValue)
 		{
 			yield break;
 		}

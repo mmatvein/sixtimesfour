@@ -7,7 +7,7 @@ namespace Game.Scripts.Gameplay.SceneSetups
 
 	public class LunchSceneRunner : SceneRunner
 	{
-		protected override IEnumerator HandleResult(int playerChoice)
+		protected override IEnumerator HandleResult(PlayerChoice choice, int choiceValue)
 		{
 			yield break;
 		}
